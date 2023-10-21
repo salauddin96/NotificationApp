@@ -13,6 +13,6 @@ class Second : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.textView.setText(intent.getStringExtra("Data"))
+        binding.textView.text = intent.getStringExtra("Data")
     }
 }

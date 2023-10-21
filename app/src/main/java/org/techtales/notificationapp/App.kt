@@ -18,7 +18,7 @@ class App: Application() {
 
             val channel2 = NotificationChannel(CHANNEL_ID2,
                 "Channel 2", NotificationManager.IMPORTANCE_DEFAULT)
-            channel2.description= "This is my low important notification"
+            channel2.description = "This is my low important notification"
 
             val manager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
             manager.createNotificationChannel(channel1)

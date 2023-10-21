@@ -4,48 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="60dp"
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/title"
-        android:layout_width="match_parent"
+        android:id="@+id/titleEtxt"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:ems="10"
+        android:inputType="text"
         android:hint="Title"
-        app:layout_constraintEnd_toEndOf="@+id/content"
+        android:paddingLeft="10dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/content"
-        android:layout_width="match_parent"
+        android:id="@+id/desEtxt"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="Content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        android:ems="10"
+        android:inputType="text"
+        android:hint="write desc..."
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/titleEtxt"
+        app:layout_constraintStart_toStartOf="@+id/titleEtxt"
+        app:layout_constraintTop_toBottomOf="@+id/titleEtxt" />
 
     <Button
-        android:id="@+id/high"
+        android:id="@+id/lowBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:text="Low"
+        app:layout_constraintEnd_toStartOf="@+id/highBtn"
+        app:layout_constraintStart_toStartOf="@+id/desEtxt"
+        app:layout_constraintTop_toBottomOf="@+id/desEtxt" />
+
+    <Button
+        android:id="@+id/highBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="4dp"
         android:text="High"
-        app:layout_constraintEnd_toEndOf="@+id/content"
-        app:layout_constraintTop_toBottomOf="@+id/content" />
-
-    <Button
-        android:id="@+id/low"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="88dp"
-        android:text="Low"
-        app:layout_constraintEnd_toStartOf="@+id/high"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/content"
-        app:layout_constraintTop_toBottomOf="@+id/content" />
+        app:layout_constraintEnd_toEndOf="@+id/desEtxt"
+        app:layout_constraintTop_toBottomOf="@+id/desEtxt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
