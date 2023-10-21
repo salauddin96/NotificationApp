@@ -1,6 +1,7 @@
 package org.techtales.notificationapp
 
 import android.app.NotificationManager
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.NotificationCompat
@@ -23,6 +24,13 @@ class MainActivity : AppCompatActivity() {
             notification.setContentText(binding.content.text.toString())
                 notification.setSmallIcon(R.drawable.baseline_arrow_upward_24)
                     notification.setPriority(NotificationCompat.PRIORITY_HIGH)
+                        .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                        .setColor(Color.MAGENTA)
+                        .addAction(R.drawable.baseline_arrow_upward_24,"Back", null)
+                        .addAction(R.drawable.baseline_arrow_upward_24,"Play", null)
+                        .addAction(R.drawable.baseline_arrow_upward_24,"Next", null)
+                        .setOnlyAlertOnce(true)
+                        .setAutoCancel(true)
                 .build()
 
             val manager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
