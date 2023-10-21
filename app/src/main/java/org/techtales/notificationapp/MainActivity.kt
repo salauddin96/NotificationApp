@@ -20,12 +20,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val intent = Intent(this@MainActivity, MainActivity::class.java)
+        val intent = Intent(this@MainActivity, Second::class.java)
 
         binding.high.setOnClickListener {
             val notification = NotificationCompat.Builder(this, App().CHANNEL_ID1)
             notification.setContentTitle(binding.title.text.toString())
             notification.setContentText(binding.content.text.toString())
+
+            intent.putExtra("Data", binding.content.text.toString())
 
             val pendingIntent = PendingIntent.getActivity(this@MainActivity, 0, intent, PendingIntent.FLAG_MUTABLE)
 
@@ -34,9 +36,9 @@ class MainActivity : AppCompatActivity() {
                         .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                         .setColor(Color.MAGENTA)
                         .setContentIntent(pendingIntent)
-                        .addAction(R.drawable.baseline_arrow_upward_24,"Back", null)
-                        .addAction(R.drawable.baseline_arrow_upward_24,"Play", null)
-                        .addAction(R.drawable.baseline_arrow_upward_24,"Next", null)
+                        .addAction(R.drawable.baseline_arrow_upward_24,"Back", pendingIntent)
+                        .addAction(R.drawable.baseline_arrow_upward_24,"Play", pendingIntent)
+                        .addAction(R.drawable.baseline_arrow_upward_24,"Next", pendingIntent)
                         .setOnlyAlertOnce(true)
                         .setAutoCancel(true)
                 .build()
